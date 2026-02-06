@@ -99,7 +99,7 @@ using namespace facebook::react;
 	const auto &newViewProps = static_cast<const PullToRefreshHeaderProps &>(*props);
 
 	// `refreshing`
-	if (newViewProps.refreshing != oldViewProps.refreshing) {
+	if (newViewProps.refreshing != oldViewProps.refreshing || !newViewProps.refreshing) {
 		self.refreshing = newViewProps.refreshing;
 	}
 	
