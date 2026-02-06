@@ -1,0 +1,59 @@
+{
+	"name": "@sdcx/pull-to-refresh",
+	"description": "A react-native PullToRefresh component.",
+	"version": "1.1.1",
+	"main": "./dist/index",
+	"module": "./dist/index",
+	"types": "./dist/index.d.ts",
+	"react-native": "src/index",
+	"source": "src/index",
+	"nativePackage": true,
+	"files": [
+		"src",
+		"dist",
+		"android",
+		"ios",
+		"common",
+		"react-native.config.js",
+		"RNPullToRefresh.podspec",
+		"!android/build",
+		"!ios/build",
+		"!**/__tests__"
+	],
+	"repository": "https://github.com/listenzz/react-native-troika",
+	"homepage": "https://github.com/listenzz/react-native-troika/tree/master/packages/pull-to-refresh/README.md",
+	"author": "sdcx",
+	"license": "MIT",
+	"keywords": [
+		"react-native",
+		"pull-to-refresh",
+		"refresh-control"
+	],
+	"scripts": {
+		"build": "rm -rf ./dist && tsc -p tsconfig.json",
+		"prepare": "npm run build",
+		"tsc": "tsc",
+		"test": "jest",
+		"lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx"
+	},
+	"peerDependencies": {
+		"react": ">=16.8",
+		"react-native": ">=0.60"
+	},
+	"devDependencies": {},
+	"codegenConfig": {
+		"name": "pulltorefresh",
+		"type": "components",
+		"jsSrcsDir": "src",
+		"android": {
+			"javaPackageName": "com.reactnative.pulltorefresh"
+		},
+		"ios": {
+			"componentProvider": {
+				"PullToRefresh": "RNPullToRefresh",
+				"PullToRefreshHeader": "RNPullToRefreshHeader",
+				"PullToRefreshFooter": "RNPullToRefreshFooter"
+			}
+		}
+	}
+}
